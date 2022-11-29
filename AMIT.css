@@ -1,13 +1,41 @@
-#new{
+
+body{
+    background-image: url("https://images.unsplash.com/photo-1593538313188-7a6ab30a8ae4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 1500px 800px;
+
+}
+    h1{
+        font-family: sans-serif;
+        font-style:italic ;
+        text-align: center;
+        font-size: 45px;
+    }
+  #expense{
+    margin-top: 100px;
     border-style: solid; 
     margin-left: 350px;
-    background-color: rgb(230, 173, 201);
+    background-color: rgb(190, 250, 111);
     width: 650px;
     height: 400px;
     text-align: center;
-    
-    
-    }
-    h1{
-        text-align: center;
-    }
+    display: inline-block;
+  }
+  label{
+    margin: 5px;
+    font-size: 20px;
+  }
+  input{
+    margin: 5px;
+    width: 40%;
+  }
+  #category{
+width: 40%;
+padding: 1.5px;
+  }
+  #button{
+    width: 30%;
+    padding: 4px;
+    background-color: rgb(11, 235, 11);
+  }

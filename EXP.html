@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="AMIT.CSS" />
   </head>
   <body>
-
+<div id="expense">
     <form id="new" onsubmit="saveToLocalStorage(event)">
       <h1 >EXPENSE TRACKER</h1><br><hr>
       <label for="food" >PRICE:</label><br>
@@ -16,6 +16,7 @@
 
       <label for="category">CATEGORY:</label><br>
 <select name="category" id="category">
+        <option value="" hidden>Choose a category</option>
         <option value="Starter">Starter</option>
         <option value="lunch">Lunch</option>
         <option value="chinese">Chinese</option>
@@ -23,10 +24,10 @@
       </select><br>
       <label for="foodname">DESCRIPTION:</label><br>
       <input type="text" id="foodname" name="foodname" required  /><br>
-      <button>Submit</button>
-      <ul id="listOfUsers"></ul><ul id="listOfUsers"></ul>
+      <button id="button">Submit</button>
       </form>
-      
+            <ul id="listOfUsers"></ul><ul id="listOfUsers"></ul>
+          </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.0/axios.min.js"></script>
 
  <script src="EXPENSE.js"></script>

@@ -10,7 +10,7 @@ function saveToLocalStorage(event) {
       description1
       // id,
     };
-    axios.post("https://crudcrud.com/api/f25fef214505404d8666bf47ba880507/appointmentData",obj)
+    axios.post("https://crudcrud.com/api/6973929c871f4794ba7c87cde5ec0ab5/appointmentData",obj)
     .then((Response)=> {
       showOrderOnSreen(Response.data)
       console.log(Response)
@@ -26,9 +26,9 @@ function saveToLocalStorage(event) {
   }
   
   window.addEventListener("DOMContentLoaded", () => {
-    axios.get("https://crudcrud.com/api/f25fef214505404d8666bf47ba880507/appointmentData")
+    axios.get("https://crudcrud.com/api/6973929c871f4794ba7c87cde5ec0ab5/appointmentData")
     .then((Response)=>{
-      console.log(Response)
+      // console.log(Response)
       for(var i=0; i<Response.data.length; i++){
         showOrderOnSreen(Response.data[i])
       }
@@ -52,22 +52,22 @@ function saveToLocalStorage(event) {
     parentNode.innerHTML = parentNode.innerHTML + childHTML;
   }
   //edit
-  function editUserDetails(food1, category1, description1) {
+  function editUserDetails(food1, category1, description1,userId) {
     document.getElementById("food").value = food1;
     document.getElementById("category").value = category1;
     document.getElementById("foodname").value = description1;
   
-    deleteUser(id);
+    deleteUser(userId);
   }
   
   function deleteUser(userId) {
-    axios.delete(`https://crudcrud.com/api/f25fef214505404d8666bf47ba880507/appointmentData/${userId}`)
+    axios.delete(`https://crudcrud.com/api/6973929c871f4794ba7c87cde5ec0ab5/appointmentData/${userId}`)
     .then((Response)=>{
       removeUserFromScreen(userId)
     })
     .catch((err)=>{
       console.log(err)
-    })
+    });
     // localStorage.removeItem(id);
     // removeUserFromScreen(id);
   }
@@ -75,6 +75,8 @@ function saveToLocalStorage(event) {
   function removeUserFromScreen(userId) {
     const parentNode = document.getElementById("listOfUsers");
     const childNodeToBeDeleted = document.getElementById(userId);
-  
-    parentNode.removeChild(childNodeToBeDeleted);
+  if(childNodeToBeDeleted){
+        parentNode.removeChild(childNodeToBeDeleted);
+
+  }
   }
